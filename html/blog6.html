@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">React JS environment Setup</h1>
+  <p class="w3-xlarge">translated from the blog of <a href="https://www.kirupa.com/react/setting_up_react_environment.htm"> kirupa </a>
+  </p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+<div>
+  <h1>設置  ReactDev 環境 </h1>
+  <h2>我們要來設置React 的建置環境以便來 建立一個 React 的 App. </h2>
+  <p> 學習React 已是非常困難了， 我們必須要簡化React 建置環境的難易度。其中一個方法是結合Node, Babel, 和 webpack 。 我們將會做進一步的介紹。</p>
+  <h2> Node JS. ：</h2> 
+  <p>讓你可以用JavaScript 來建置app並且可以進入很多我們瀏覽器無法瀏覽的API。 Node JS  建置完全是用JavaScript 來建立專案。</p>
+  <h2>Babel: </h2> 
+  <p>Babel 是JavaScript 的轉換器。舉例來說：JS 或是JSX 的檔案 都可以用Babel 轉換到可讀取的JavaScript. </p>
+  <h2>Webpack: </h2>
+  <p>Webpack 包含了很多函式庫以及框架，避免浪費寫程式時的空間。</p>
+  <h3> 開始來環境建製吧！</h3>
+  <h2>設置初始專案架構:</h2>
+  <p> 首先我們必須到桌面建立一個檔案稱作：MyTotallyAwesomeApp,並且在裡面建立dev 和 output 兩個資料夾。Dev 用來放置未轉換的JSX 資料夾。Output 放置專案建立後的結果。在來我們要在 資料夾中建立一個HTML 檔稱作index.html 。並且包含以下程式碼。</p>
+  <pre style='color:#000000;background:#f1f0f0;'><span style='color:#44aadd; '>&lt;</span>!DOCTYPE html<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>html<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>head<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>title<span style='color:#44aadd; '>></span>React! React! React!<span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>title<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>head<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>body<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>div <span style='color:#800000; font-weight:bold; '>id</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"container"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>div<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>script src<span style='color:#806030; '>=</span><span style='color:#e60000; '>"output/myCode.js"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>script<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>body<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>html<span style='color:#44aadd; '>></span>
+  </pre>
+  <p>記得要存檔！</p>
+  <h2> 安裝Node.JS </h2>
+  <p> 到以下網站案裝其中一個Node 檔案https://nodejs.org/ 接下來我們要到我們的MyTotallyAwesomeApp資料夾中初始化Node.JS。在Terminal 中輸入</p>
+  <pre style='color:#000000;background:#f1f0f0;'>npm init</pre>
+  <p> 但是！因為我們的資料中有大寫，所以會錯誤。我們將名稱改為mytotallyawesomeapp 來看看我們的資料夾，是不是多了package.json檔案呢？沒錯，這就對了！接下來我們要安裝 React Dependencies。</p>
+  <p>開啟終端機輸入：</p>
+  <pre style='color:#000000;background:#f1f0f0;'>npm install react react<span style='color:#44aadd; '>-</span>dom <span style='color:#44aadd; '>-</span><span style='color:#44aadd; '>-</span>save
+  </pre>
+  <p> 開始跑安裝啦！ 安裝完請到MyTotallyAwesomeApp中確認是不是有node_modules檔案
+  新增JSX檔案： 到dev資料夾中建立index.jsx 並且複製貼上以下的程式碼。</p>
+  <pre style='color:#000000;background:#f1f0f0;'><span style='color:#400000; font-weight:bold; '>import</span> React <span style='color:#400000; font-weight:bold; '>from</span> <span style='color:#e60000; '>"react"</span><span style='color:#806030; '>;</span>
+  <span style='color:#400000; font-weight:bold; '>import</span> ReactDOM <span style='color:#400000; font-weight:bold; '>from</span> <span style='color:#e60000; '>"react-dom"</span><span style='color:#806030; '>;</span>
+  var HelloWorld <span style='color:#806030; '>=</span> React<span style='color:#806030; '>.</span>createClass<span style='color:#806030; '>(</span><span style='color:#806030; '>{</span>
+  render<span style='color:#806030; '>:</span> function<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span>
+  <span style='color:#400000; font-weight:bold; '>return</span> <span style='color:#806030; '>(</span>
+  <span style='color:#44aadd; '>&lt;</span>p<span style='color:#44aadd; '>></span>Hello<span style='color:#806030; '>,</span> <span style='color:#806030; '>{</span>this<span style='color:#806030; '>.</span>props<span style='color:#806030; '>.</span>greetTarget<span style='color:#806030; '>}</span>!<span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>p<span style='color:#44aadd; '>></span>
+  <span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  <span style='color:#806030; '>}</span>
+  <span style='color:#806030; '>}</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  ReactDOM<span style='color:#806030; '>.</span>render<span style='color:#806030; '>(</span>
+  <span style='color:#44aadd; '>&lt;</span>div<span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>HelloWorld greetTarget<span style='color:#806030; '>=</span><span style='color:#e60000; '>"Batman"</span><span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>HelloWorld greetTarget<span style='color:#806030; '>=</span><span style='color:#e60000; '>"Iron Man"</span><span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>HelloWorld greetTarget<span style='color:#806030; '>=</span><span style='color:#e60000; '>"Nicolas Cage"</span><span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>HelloWorld greetTarget<span style='color:#806030; '>=</span><span style='color:#e60000; '>"Mega Man"</span><span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>HelloWorld greetTarget<span style='color:#806030; '>=</span><span style='color:#e60000; '>"Bono"</span><span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span>HelloWorld greetTarget<span style='color:#806030; '>=</span><span style='color:#e60000; '>"Catwoman"</span><span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+  <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>div<span style='color:#44aadd; '>></span><span style='color:#806030; '>,</span>
+  document<span style='color:#806030; '>.</span>querySelector<span style='color:#806030; '>(</span><span style='color:#e60000; '>"#container"</span><span style='color:#806030; '>)</span>
+  <span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  </pre>
+  <p> 好，接下來我們要做的就是轉換JSX 到JS!</p>
+  <h2> 設置Webpack於資料夾中</h2>
+  <p> 在Termainal 中輸入</p>
+  <pre style='color:#000000;background:#f1f0f0;'>npm install webpack <span style='color:#44aadd; '>-</span><span style='color:#44aadd; '>-</span>save
+  </pre>
+  <p> 我們會看到webpack.config.js已經建立起來了！把以下程式碼輸入到檔案裡面吧！</p>
+  <pre style='color:#000000;background:#f1f0f0;'>var webpack <span style='color:#806030; '>=</span> require<span style='color:#806030; '>(</span><span style='color:#e60000; '>"webpack"</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  var path <span style='color:#806030; '>=</span> require<span style='color:#806030; '>(</span><span style='color:#e60000; '>"path"</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  var DEV <span style='color:#806030; '>=</span> path<span style='color:#806030; '>.</span>resolve<span style='color:#806030; '>(</span>__dirname<span style='color:#806030; '>,</span> <span style='color:#e60000; '>"dev"</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  var OUTPUT <span style='color:#806030; '>=</span> path<span style='color:#806030; '>.</span>resolve<span style='color:#806030; '>(</span>__dirname<span style='color:#806030; '>,</span> <span style='color:#e60000; '>"output"</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+  var config <span style='color:#806030; '>=</span> <span style='color:#806030; '>{</span>
+  entry<span style='color:#806030; '>:</span> DEV <span style='color:#44aadd; '>+</span> <span style='color:#e60000; '>"/index.jsx"</span><span style='color:#806030; '>,</span>
+  output<span style='color:#806030; '>:</span> <span style='color:#806030; '>{</span>
+  path<span style='color:#806030; '>:</span> OUTPUT<span style='color:#806030; '>,</span>
+  filename<span style='color:#806030; '>:</span> <span style='color:#e60000; '>"myCode.js"</span>
+  <span style='color:#806030; '>}</span>
+  <span style='color:#806030; '>}</span><span style='color:#806030; '>;</span>
+  module<span style='color:#806030; '>.</span>exports <span style='color:#806030; '>=</span> config<span style='color:#806030; '>;</span>
+  </pre>
+  <h2>設置Babel: </h2>
+    <p>輸入以下指令到Terminal中：</p>
+  <pre style='color:#000000;background:#f1f0f0;'>npm install babel<span style='color:#44aadd; '>-</span>core babel<span style='color:#44aadd; '>-</span>loader babel<span style='color:#44aadd; '>-</span>preset<span style='color:#44aadd; '>-</span>es2015 babel<span style='color:#44aadd; '>-</span>preset<span style='color:#44aadd; '>-</span>react <span style='color:#44aadd; '>-</span><span style='color:#44aadd; '>-</span>save
+  </pre>
+  <p>接下來我們要新增package.json 裡面的程式碼：</p>
+  <img src="image/apple.png" height="500" weight="500"> 
+  <p>接下來我們開啟webpack.config.js新增以下程式碼：</p>
+  <img src="image/orange.png" height="500" weight="500"> 
+  <p>完成了！然我們來測試我們App 吧！</p>
+  <p>打開terminal並且輸入</p>
+  <pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>.</span><span style='color:#44aadd; '>/</span>node_modules<span style='color:#44aadd; '>/</span><span style='color:#806030; '>.</span>bin<span style='color:#44aadd; '>/</span>webpack
+  </pre>
+  <p>我們到MyTotallyAwesomeApp中開啟index.html。只要網頁顯示圖片就成功了！</p>
+  <img src=image/react2.png>
+  <p>你們辦到了！</p>
+  </div>
+  <div class="w3-third w3-center">
+  <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+  </div>
+ </div>
+</div>
+</div>
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+    <div class="w3-twothird">
+      <h1>Objective Statement</h1>
+      <h5 class="w3-padding-32">To obtain the position of Software Engineer; a role that will lend itself to refine my skills as a Software Engineer, augment my understanding of software best practices, and benefit my previous experience as a software developer and marketing professional at some of the Taiwan's leading tech organizations.
+      </h5>
+      <p class="w3-text-grey">Paul is an Engineering student study in Robotic Engineering in Tamkang University in 2015. His research area is in Robotic Vision and Control. He was accepted by Master Science Computer Science program in Illinois Institute of Technology at Fall 2018. His goal is to become a software engineer working on the area of robotic vision. 
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: code life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.facebook.com/huang.paul.77" class="fa fa-facebook-official w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/icepaulfactory/"class="fa fa-instagram w3-hover-opacity"></a>
+    <a href="https://www.snapchat.com/add/lineageispig" class="fa fa-snapchat w3-hover-opacity"></a>
+    <a href="http://pin.it/kYqcEA3" class="fa fa-pinterest-p w3-hover-opacity"></a>
+    <a href="https://twitter.com/lineageispig" class="fa fa-twitter w3-hover-opacity"></a>
+    <a href="https://www.linkedin.com/in/huang-paul-373386137/"class="fa fa-linkedin w3-hover-opacity"></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

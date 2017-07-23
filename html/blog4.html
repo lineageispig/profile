@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Opencv installation and code testing</h1>
+  <p class="w3-xlarge">The first try to use opencv to build project in xcode. 
+  </p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1> 本文章在介紹如何安裝OpeCV 於 mac 上面，並且使用xcode 建置第一個Project. </h1>
+      <h2> 大綱:</h2>
+      <div>    
+        <h3><br><br><br>簡單製作一個OpenCV 安裝於mac的教學。安裝起來還是滿複雜的, 需要用到Unix，所以我做一個安裝教學，依照下面的步驟去執行，就可以建置一個opencv 的方案。</h3>
+        <h3>mac 版本：macOS Sierra 10.12:</h3>
+        <h4> 我使用的mac為2012年的 MacBook Pro 13</h4>
+        <p> 
+          <img src="image/ocv/1.png" alt="Mountain View" style="float:middle;width:1000px;height:800px;"> </p>
+        <h3><br><br><br>下載最新的版本opencv: 3.2.0。下載opencv  http://opencv.org/
+        <img src="image/ocv/2.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;"></h3>
+        <h3> <br><br><br>安裝cmake: type the following code on the command line:
+        <img src="image/ocv/3.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;"></h3>
+        <h3> <br><br><br>
+        for mac  在搜尋輸入terminal 開啟Unix 並且輸入以下的code 安裝hombrew 指令。
+        </h3> 
+        <pre style='color:#000000;background:#f1f0f0;'>ruby <span style='color:#806030; '>-</span>e <span style='color:#806030; '>"$(curl -fsSL https://raw.github.com/Homebrew/homebrew/
+        go/install)"</span></pre> 
+        <h3><br><br><br> 之後會用指令來安裝cmake。 輸入：brew install cmake</h3>
+        <pre style='color:#000000;background:#f1f0f0;'>brew install cmake</pre>
+        <img src="image/ocv/4.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;">
+        <h3><br><br><br> 安裝 xcode 開啟App  下載xcode。
+        <img src="image/ocv/5.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;">
+        </h3>
+        <h3><br><br><br>  安裝 opencv:
+         cd進入資料夾 輸入cd 指令進下載好的opencv 資料夾  cd desktop/opencv2.framework
+        <img src="image/ocv/5-1.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;">
+        </h3>
+        <h3><br><br><br>輸入以下的code 建置一個release 資料夾於opencv資料夾裡。
+        </h3>
+      </div>   
+      <pre style='color:#000000;background:#f1f0f0;'>mkdir release
+      <span style='color:#800040; '>cd</span> release
+      cmake <span style='color:#806030; '>-</span>G <span style='color:#806030; '>"Unix Makefiles"</span> <span style='color:#806030; '>.</span><span style='color:#806030; '>.</span>
+      make
+      </pre>  
+      <h3> <br><br><br>開始在xcode create a project. 建立opencv project:
+      開啟xcode 建立專案：
+      建立command line tool 專案。 <img src="image/ocv/7.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;">  </h3>
+      <h3> <br><br><br>building setting 中 search path 建立路徑：</h3>
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>/</span>usr<span style='color:#806030; '>/</span>local<span style='color:#806030; '>/</span>lib
+      </pre>
+      <p> <img src="image/ocv/9.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;"> </p>
+      <h3> <br><br><br>header search paths 中建立  </h3>
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>/</span>usr<span style='color:#806030; '>/</span>local<span style='color:#806030; '>/</span>include   <span style='color:#806030; '>/</span>usr<span style='color:#806030; '>/</span>local<span style='color:#806030; '>/</span>include<span style='color:#806030; '>/</span>opencv
+      </pre>
+      <p> <img src="image/ocv/8.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;"> </p>
+      <h3><br><br><br>測試部分：在main.cpp 檔案複製並且覆蓋原code. 並且在圖片路徑中輸入自己電腦中的圖片路徑。成功跑出來就好嘍，這樣就完成實作的部分！</h3>
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>/</span><span style='color:#806030; '>/</span>  Created by vince on 2013<span style='color:#806030; '>.</span>
+      <span style='color:#806030; '>/</span><span style='color:#806030; '>/</span>  Copyright <span style='color:#806030; '>(</span>c<span style='color:#806030; '>)</span> 2013年 vince<span style='color:#806030; '>.</span> <span style='color:#800040; '>All</span> rights reserved<span style='color:#806030; '>.</span>
+      #include <span style='color:#806030; '>"opencv2/core/core.hpp"</span>
+      #include <span style='color:#806030; '>"opencv2/highgui/highgui.hpp"</span>
+      #include <span style='color:#806030; '>"opencv2/imgproc/imgproc.hpp"</span>
+
+
+      using namespace cv<span style='color:#806030; '>;</span>
+      using namespace <span style='color:#800040; '>std</span><span style='color:#806030; '>;</span>
+
+      int main<span style='color:#806030; '>(</span>int argc<span style='color:#806030; '>,</span> <span style='color:#800040; '>char</span> <span style='color:#806030; '>*</span>argv<span style='color:#806030; '>[</span><span style='color:#806030; '>]</span><span style='color:#806030; '>)</span>
+      {
+      cv<span style='color:#806030; '>:</span><span style='color:#806030; '>:</span>Mat src<span style='color:#806030; '>;</span>
+    
+      src<span style='color:#806030; '>=</span>cv<span style='color:#806030; '>:</span><span style='color:#806030; '>:</span>imread<span style='color:#806030; '>(</span><span style='color:#806030; '>"/Users/mac/Documents/MyCode/biglena.bmp"</span><span style='color:#806030; '>,</span> <span style='color:#806030; '>-</span>1<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+
+      <span style='color:#806030; '>/</span><span style='color:#806030; '>/</span>上面的路徑為圖片路徑
+
+      cv<span style='color:#806030; '>:</span><span style='color:#806030; '>:</span>imshow<span style='color:#806030; '>(</span><span style='color:#806030; '>"show image"</span><span style='color:#806030; '>,</span>src<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>  <span style='color:#806030; '>/</span><span style='color:#806030; '>/</span>這邊會show圖出來
+
+      cv<span style='color:#806030; '>:</span><span style='color:#806030; '>:</span>waitKey<span style='color:#806030; '>(</span>0<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+
+      return 0<span style='color:#806030; '>;</span>
+      }
+      </pre>
+
+      <p><img src="image/ocv/13.png" alt="Mountain View" style="float:middle;width:1000px;height;800px;"> </p>    
+      </div>
+
+      <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+      </div>
+      </div>
+      </div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+      <div class="w3-twothird">
+        <h1>Objective Statement</h1>
+        <h5 class="w3-padding-32">To obtain the position of Software Engineer; a role that will lend itself to refine my skills as a Software Engineer, augment my understanding of software best practices, and benefit my previous experience as a software developer and marketing professional at some of the Taiwan's leading tech organizations.
+        </h5>
+        <p class="w3-text-grey">Paul is an Engineering student study in Robotic Engineering in Tamkang University in 2015. His research area is in Robotic Vision and Control. He was accepted by Master Science Computer Science program in Illinois Institute of Technology at Fall 2018. His goal is to become a software engineer working on the area of robotic vision.
+        </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: code life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.facebook.com/huang.paul.77" class="fa fa-facebook-official w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/icepaulfactory/"class="fa fa-instagram w3-hover-opacity"></a>
+    <a href="https://www.snapchat.com/add/lineageispig" class="fa fa-snapchat w3-hover-opacity"></a>
+    <a href="http://pin.it/kYqcEA3" class="fa fa-pinterest-p w3-hover-opacity"></a>
+    <a href="https://twitter.com/lineageispig" class="fa fa-twitter w3-hover-opacity"></a>
+    <a href="https://www.linkedin.com/in/huang-paul-373386137/"class="fa fa-linkedin w3-hover-opacity"></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"></a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+</body>
+</html>

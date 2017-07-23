@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Setting up PHP on Mac</h1>
+  <p class="w3-xlarge"></p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+    <div>
+      <h1> The article is translate from the following link: <a href="https://jason.pureconcepts.net/2015/10/install-apache-php-mysql-mac-os-x-el-capitan/"> here </a>
+      </h1> 
+      <h2> Installing PHP on mac.</h2>
+      <h3> First: Running following commands at the terminal.</h3>
+      <pre style='color:#000000;background:#f1f0f0;'>Sudo su –</pre>
+      <pre style='color:#000000;background:#f1f0f0;'>Apachetl start
+      </pre>
+      <h3> Then, verify It works! by copying following links to your browser. </h3>
+      <a href="http://localhost">  http://localhost </a>
+    
+      <h3> After that, you need to enable PHP for Apache. Copy following codes to the terminal. </h3>
+      <pre style='color:#000000;background:#f1f0f0;'>cd <span style='color:#44aadd; '>/</span>etc<span style='color:#44aadd; '>/</span>apache2<span style='color:#44aadd; '>/</span>
+      cp httpd<span style='color:#806030; '>.</span>conf httpd<span style='color:#806030; '>.</span>conf<span style='color:#806030; '>.</span>bak
+      </pre>
+    
+      <h3> edit the apache configuration
+      </h3>
+    <pre style='color:#000000;background:#f1f0f0;'>vi httpd<span style='color:#806030; '>.</span>conf
+    </pre>
+    <h3> search for the following description in the document.
+    </h3>
+    <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '>#LoadModule php5_module libexec/apache2/libphp5.so</span>
+    </pre>
+    <h3> and delete the first symble #
+    </h3>
+    <h3> Next, create the phpinfo() by copying the following root in the terminal. </h3>
+    <pre style='color:#000000;background:#f1f0f0;'>echo <span style='color:#e60000; '>'&lt;?php phpinfo();'</span> <span style='color:#44aadd; '>></span> <span style='color:#44aadd; '>/</span>Library<span style='color:#44aadd; '>/</span>WebServer<span style='color:#44aadd; '>/</span>Documents<span style='color:#44aadd; '>/</span>phpinfo<span style='color:#806030; '>.</span>php
+    </pre>
+    <h3> Verify PHP by copying the following link to the browser:</h3>
+    <a href="http://localhost/phpinfo.php"> http://localhost/phpinfo.php
+    </a>
+    <h3> if you see something like this, it works! </h3>
+    <img src="image/php.png">
+    </div>
+   </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+    <div class="w3-twothird">
+      <h1>Objective Statement</h1>
+      <h5 class="w3-padding-32">To obtain the position of Software Engineer; a role that will lend itself to refine my skills as a Software Engineer, augment my understanding of software best practices, and benefit my previous experience as a software developer and marketing professional at some of the Taiwan's leading tech organizations.
+      </h5>
+
+      <p class="w3-text-grey">Paul is an Engineering student study in Robotic Engineering in Tamkang University in 2015. His research area is in Robotic Vision and Control. He was accepted by Master Science Computer Science program in Illinois Institute of Technology at Fall 2018. His goal is to become a software engineer working on the area of robotic vision.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: code life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.facebook.com/huang.paul.77" class="fa fa-facebook-official w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/icepaulfactory/"class="fa fa-instagram w3-hover-opacity"></a>
+    <a href="https://www.snapchat.com/add/lineageispig" class="fa fa-snapchat w3-hover-opacity"></a>
+    <a href="http://pin.it/kYqcEA3" class="fa fa-pinterest-p w3-hover-opacity"></a>
+    <a href="https://twitter.com/lineageispig" class="fa fa-twitter w3-hover-opacity"></a>
+    <a href="https://www.linkedin.com/in/huang-paul-373386137/"class="fa fa-linkedin w3-hover-opacity"></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

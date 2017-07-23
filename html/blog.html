@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+</div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo"> Machine Learning </h1>
+  <p class="w3-xlarge"> loading datasets, evaluate algorithms and present results. 
+
+  </p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1> Research for Machine learning on the internet.
+      </h1>
+      <h2>  大家好，今天要介紹的是使用 Python 實作機器學習:  
+      </h2>
+      <h3> 機器學習是一門設計如何讓演算法能夠學習的電腦科學，讓機器能夠透過觀察已知的資料學習預測未知的資料。如果您是一位機器學習的初學者，讓我們來暖身一下，利用 Python 的機器學習套件 scikit-learn  學習。scikit-learn 源於於 SciPy，事實上 scikit 有很多個，我們使用的 scikit-learn 套件是專門用來實作機器學習以及資料採礦的。 
+      </h3> 
+      <h4> 首先我們需要透過Terminal 來下載 scikit-learn 並且在python 上面執行。
+      </h4>
+<!-- This is the code -->
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#400000; font-weight:bold; '>from</span> sklearn <span style='color:#400000; font-weight:bold; '>import</span> datasets
+        <span style='color:#400000; font-weight:bold; '>import</span> matplotlib<span style='color:#806030; '>.</span>pyplot <span style='color:#400000; font-weight:bold; '>as</span> plt
+        digits <span style='color:#806030; '>=</span> datasets<span style='color:#806030; '>.</span>load_digits<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+        fig <span style='color:#806030; '>=</span> plt<span style='color:#806030; '>.</span>figure<span style='color:#806030; '>(</span>figsize<span style='color:#806030; '>=</span><span style='color:#806030; '>(</span><span style='color:#8c0000; '>4</span><span style='color:#806030; '>,</span> <span style='color:#8c0000; '>2</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        fig<span style='color:#806030; '>.</span>subplots_adjust<span style='color:#806030; '>(</span>left<span style='color:#806030; '>=</span><span style='color:#8c0000; '>0</span><span style='color:#806030; '>,</span> right<span style='color:#806030; '>=</span><span style='color:#8c0000; '>1</span><span style='color:#806030; '>,</span> bottom<span style='color:#806030; '>=</span><span style='color:#8c0000; '>0</span><span style='color:#806030; '>,</span> top<span style='color:#806030; '>=</span><span style='color:#8c0000; '>1</span><span style='color:#806030; '>,</span> 
+        hspace<span style='color:#806030; '>=</span><span style='color:#800000; '>0.05</span><span style='color:#806030; '>,</span>wspace<span style='color:#806030; '>=</span><span style='color:#800000; '>0.05</span><span style='color:#806030; '>)</span>
+        <span style='color:#400000; font-weight:bold; '>for</span> i <span style='color:#400000; font-weight:bold; '>in</span> <span style='color:#800000; font-weight:bold; '>range</span><span style='color:#806030; '>(</span><span style='color:#8c0000; '>8</span><span style='color:#806030; '>)</span><span style='color:#806030; '>:</span>
+        ax <span style='color:#806030; '>=</span> fig<span style='color:#806030; '>.</span>add_subplot<span style='color:#806030; '>(</span><span style='color:#8c0000; '>2</span><span style='color:#806030; '>,</span> <span style='color:#8c0000; '>4</span><span style='color:#806030; '>,</span> i <span style='color:#44aadd; '>+</span> <span style='color:#8c0000; '>1</span><span style='color:#806030; '>,</span> xticks <span style='color:#806030; '>=</span> <span style='color:#806030; '>[</span><span style='color:#806030; '>]</span><span style='color:#806030; '>,</span> yticks <span style='color:#806030; '>=</span> <span style='color:#806030; '>[</span><span style='color:#806030; '>]</span><span style='color:#806030; '>)</span>
+        ax<span style='color:#806030; '>.</span>imshow<span style='color:#806030; '>(</span>digits<span style='color:#806030; '>.</span>images<span style='color:#806030; '>[</span>i<span style='color:#806030; '>]</span><span style='color:#806030; '>,</span> cmap <span style='color:#806030; '>=</span> plt<span style='color:#806030; '>.</span>cm<span style='color:#806030; '>.</span>binary<span style='color:#806030; '>)</span>
+        ax<span style='color:#806030; '>.</span>text<span style='color:#806030; '>(</span><span style='color:#8c0000; '>0</span><span style='color:#806030; '>,</span> <span style='color:#8c0000; '>7</span><span style='color:#806030; '>,</span> <span style='color:#800000; font-weight:bold; '>str</span><span style='color:#806030; '>(</span>digits<span style='color:#806030; '>.</span>target<span style='color:#806030; '>[</span>i<span style='color:#806030; '>]</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        plt<span style='color:#806030; '>.</span>show<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+        </pre>
+        <img src="image/mlearn/sklearn.png" alt="Mountain View"  style="width:304px;height:228px;">
+<!-- This is the description --> 
+        <h4> 讓我們來解釋以上的程式。我們使用 matplotlib 視覺化手寫數字圖片，並要使用 Python 的資料視覺化套件 matplotlib 來視覺化這些手寫數字圖片：
+
+//  加入圖片：
+
+        <p>這段程式看起來有點難懂，讓我們分開來看：</p>
+        <p>•	載入 matplotlib 套件。</p>
+        <p>•	設定一個長 2 吋，寬 4 吋的空白畫布，準備待會將子圖形畫在上面。</p>
+        <p>•	調整子圖形的一些參數。</p>
+        <p>•	使用一個 for 迴圈開始要將空白畫布填滿。</p>
+        <p>•	初始化 8 個子圖形，並依序填入 2 x 4 網格中的每一格。</p>
+        <p>•	最後畫龍點睛的部分是在每個子圖形 (0, 7) 的位置（左下角）顯示目標值。</p>
+        <p>•	別忘了使用 plt.show() 將畫好的圖顯示出來！ </p> 
+        </h4>
+        <div> 
+          <h2> <br><br><br><br>第二個專案是使用dataset來跑圖， 然我們來翻看原文來製作我們的專案吧！
+          </h2>
+          <h2> How Do You Start Machine Learning in Python? </h2>
+          <h3> The best way to learn machine learning is by designing and completing small projects. 
+          </h3>
+          <h4> Python Can Be Intimidating When Getting Started: Python is a popular and powerful interpreted language. Unlike R, Python is a complete language and platform that you can use for both research and development and developing production systems. There are also a lot of modules and libraries to choose from, providing multiple ways to do each task. It can feel overwhelming. The best way to get started using Python for machine learning is to complete a project.
+           Beginners Need A Small End-to-End Project 
+          </h4>
+          <p> A machine learning project may not be linear, but it has a number of well known steps:</p> 
+          <p>1.	Define Problem.</p>
+          <p>2.	Prepare Data.</p>
+          <p>3.	Evaluate Algorithms.</p>
+          <p>4.	Improve Results.</p>
+          <p>5.	Present Results.</p>
+          <h2> You Can Do Machine Learning in Python
+               Work through the tutorial above. It will take you 5-to-10 minutes, max
+          </h2>
+          <p> You do not need to understand everything. (at least not right now) Your goal is to run through the tutorial end-to-end and get a result. 
+          </p> 
+          <p> You do not need to understand everything on the first pass. List down your questions as you go. Make heavy use of the help(“FunctionName”) help syntax in Python to learn about all of the functions that you’re using. 
+          </p>
+
+          <p> You do not need to know how the algorithms work. It is important to know about the limitations and how to configure machine learning algorithms. But learning about algorithms can come later. You need to build up this algorithm knowledge slowly over a long period of time. Today, start off by getting comfortable with the platform. </p> 
+          <p> You do not need to be a Python programmer.  </p>
+          <p> You do not need to be a machine learning expert. </p> 
+          <h2> What about other steps in a machine learning project? </h2> 
+          <p>We did not cover all of the steps in a machine learning project because this is your first project and we need to focus on the key steps. Namely, loading data, looking at the data, evaluating some algorithms and making some predictions. In later tutorials we can look at other data preparation and result improvement tasks. 
+          </p>
+        
+        </div>
+
+        <!-- This is the code -->
+        <p> Let's start to build a machine learning project. </p> 
+        <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Check the versions of libraries</span>
+        <span style='color:#c34e00; '># Python version</span>
+        <span style='color:#400000; font-weight:bold; '>import</span> sys
+        <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'Python: {}'</span><span style='color:#806030; '>.</span>format<span style='color:#806030; '>(</span>sys<span style='color:#806030; '>.</span>version<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        <span style='color:#c34e00; '># scipy</span>
+        <span style='color:#400000; font-weight:bold; '>import</span> scipy
+        <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'scipy: {}'</span><span style='color:#806030; '>.</span>format<span style='color:#806030; '>(</span>scipy<span style='color:#806030; '>.</span>__version__<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        <span style='color:#c34e00; '># numpy</span>
+        <span style='color:#400000; font-weight:bold; '>import</span> numpy
+        <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'numpy: {}'</span><span style='color:#806030; '>.</span>format<span style='color:#806030; '>(</span>numpy<span style='color:#806030; '>.</span>__version__<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        <span style='color:#c34e00; '># matplotlib</span>
+        <span style='color:#400000; font-weight:bold; '>import</span> matplotlib
+        <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'matplotlib: {}'</span><span style='color:#806030; '>.</span>format<span style='color:#806030; '>(</span>matplotlib<span style='color:#806030; '>.</span>__version__<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        <span style='color:#c34e00; '># pandas</span>
+        <span style='color:#400000; font-weight:bold; '>import</span> pandas
+        <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'pandas: {}'</span><span style='color:#806030; '>.</span>format<span style='color:#806030; '>(</span>pandas<span style='color:#806030; '>.</span>__version__<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        <span style='color:#c34e00; '># scikit-learn</span>
+        <span style='color:#400000; font-weight:bold; '>import</span> sklearn
+        <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'sklearn: {}'</span><span style='color:#806030; '>.</span>format<span style='color:#806030; '>(</span>sklearn<span style='color:#806030; '>.</span>__version__<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+        </pre>
+        <p>  And you will begin to load the library </p>
+      
+        <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Load libraries</span>
+       <span style='color:#400000; font-weight:bold; '>import</span> pandas
+       <span style='color:#400000; font-weight:bold; '>from</span> pandas<span style='color:#806030; '>.</span>tools<span style='color:#806030; '>.</span>plotting <span style='color:#400000; font-weight:bold; '>import</span> scatter_matrix
+       <span style='color:#400000; font-weight:bold; '>import</span> matplotlib<span style='color:#806030; '>.</span>pyplot <span style='color:#400000; font-weight:bold; '>as</span> plt
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn <span style='color:#400000; font-weight:bold; '>import</span> model_selection
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>metrics <span style='color:#400000; font-weight:bold; '>import</span> classification_report
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>metrics <span style='color:#400000; font-weight:bold; '>import</span> confusion_matrix
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>metrics <span style='color:#400000; font-weight:bold; '>import</span> accuracy_score
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>linear_model <span style='color:#400000; font-weight:bold; '>import</span> LogisticRegression
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>tree <span style='color:#400000; font-weight:bold; '>import</span> DecisionTreeClassifier
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>neighbors <span style='color:#400000; font-weight:bold; '>import</span> KNeighborsClassifier
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>discriminant_analysis <span style='color:#400000; font-weight:bold; '>import</span> LinearDiscriminantAnalysis
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>naive_bayes <span style='color:#400000; font-weight:bold; '>import</span> GaussianNB
+       <span style='color:#400000; font-weight:bold; '>from</span> sklearn<span style='color:#806030; '>.</span>svm <span style='color:#400000; font-weight:bold; '>import</span> SVC
+       </pre>
+        
+        
+       <p>  After that, you will load the datasets </p>
+ <!-- This is the code -->    
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Load dataset</span>
+       url <span style='color:#806030; '>=</span> <span style='color:#e60000; '>"https://archive.ics.uci.edu/ml/machine-learning-databases</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>/</span><span style='color:#e60000; '></span>
+       <span style='color:#e60000; '>iris/iris.data"</span>
+       names <span style='color:#806030; '>=</span> <span style='color:#806030; '>[</span><span style='color:#e60000; '>'sepal-length'</span><span style='color:#806030; '>,</span> <span style='color:#e60000; '>'sepal-width'</span><span style='color:#806030; '>,</span> <span style='color:#e60000; '>'petal-length'</span><span style='color:#806030; '>,</span>
+       <span style='color:#e60000; '>'petal-width'</span><span style='color:#806030; '>,</span> <span style='color:#e60000; '>'class'</span><span style='color:#806030; '>]</span>
+       dataset <span style='color:#806030; '>=</span> pandas<span style='color:#806030; '>.</span>read_csv<span style='color:#806030; '>(</span>url<span style='color:#806030; '>,</span> names<span style='color:#806030; '>=</span>names<span style='color:#806030; '>)</span>
+       </pre>
+     
+        
+       <p> print the shape, head, descriptions, and class distribution. </p>
+       <!-- This is the code -->
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># shape</span>
+       <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>dataset<span style='color:#806030; '>.</span>shape<span style='color:#806030; '>)</span>
+       </pre>
+       <!-- This is the code -->     
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># head</span>
+       <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>dataset<span style='color:#806030; '>.</span>head<span style='color:#806030; '>(</span><span style='color:#8c0000; '>20</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+       </pre>
+       <!-- This is the code -->     
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># descriptions</span>
+       <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>dataset<span style='color:#806030; '>.</span>describe<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+       </pre>
+       <!-- This is the code -->     
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># class distribution</span>
+       <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>dataset<span style='color:#806030; '>.</span>groupby<span style='color:#806030; '>(</span><span style='color:#e60000; '>'class'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>.</span>size<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+       </pre>
+        
+       <p> Load the box and whisker plots, histograms, scatter plot matrix.</p>
+       <!-- This is the code -->
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># box and whisker plots</span>
+       dataset<span style='color:#806030; '>.</span>plot<span style='color:#806030; '>(</span>kind<span style='color:#806030; '>=</span><span style='color:#e60000; '>'box'</span><span style='color:#806030; '>,</span> subplots<span style='color:#806030; '>=</span><span style='color:#074726; '>True</span><span style='color:#806030; '>,</span> layout<span style='color:#806030; '>=</span><span style='color:#806030; '>(</span><span style='color:#8c0000; '>2</span><span style='color:#806030; '>,</span><span style='color:#8c0000; '>2</span><span style='color:#806030; '>)</span><span style='color:#806030; '>,</span> 
+       sharex<span style='color:#806030; '>=</span><span style='color:#074726; '>False</span><span style='color:#806030; '>,</span> sharey<span style='color:#806030; '>=</span><span style='color:#074726; '>False</span><span style='color:#806030; '>)</span>
+       plt<span style='color:#806030; '>.</span>show<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+       </pre>
+       <!-- This is the code -->      
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># histograms</span>
+       dataset<span style='color:#806030; '>.</span>hist<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+       plt<span style='color:#806030; '>.</span>show<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+       </pre>
+       <!-- This is the code -->      
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># scatter plot matrix</span>
+       scatter_matrix<span style='color:#806030; '>(</span>dataset<span style='color:#806030; '>)</span>
+       plt<span style='color:#806030; '>.</span>show<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+       </pre>
+        
+       <p> Split-out validation dataset. </p>
+       <!-- This is the code -->      
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Split-out validation dataset</span>
+       array <span style='color:#806030; '>=</span> dataset<span style='color:#806030; '>.</span>values
+       X <span style='color:#806030; '>=</span> array<span style='color:#806030; '>[</span><span style='color:#806030; '>:</span><span style='color:#806030; '>,</span><span style='color:#8c0000; '>0</span><span style='color:#806030; '>:</span><span style='color:#8c0000; '>4</span><span style='color:#806030; '>]</span>
+       Y <span style='color:#806030; '>=</span> array<span style='color:#806030; '>[</span><span style='color:#806030; '>:</span><span style='color:#806030; '>,</span><span style='color:#8c0000; '>4</span><span style='color:#806030; '>]</span>
+       validation_size <span style='color:#806030; '>=</span> <span style='color:#800000; '>0.20</span>
+       seed <span style='color:#806030; '>=</span> <span style='color:#8c0000; '>7</span>
+       X_train<span style='color:#806030; '>,</span> X_validation<span style='color:#806030; '>,</span> Y_train<span style='color:#806030; '>,</span> Y_validation <span style='color:#806030; '>=</span> 
+       model_selection<span style='color:#806030; '>.</span>train_test_split<span style='color:#806030; '>(</span>X<span style='color:#806030; '>,</span> Y<span style='color:#806030; '>,</span> test_size<span style='color:#806030; '>=</span>
+       validation_size<span style='color:#806030; '>,</span> random_state<span style='color:#806030; '>=</span>seed<span style='color:#806030; '>)</span>
+       </pre>
+      
+       <p> Test options and evaluation metric. </p>
+       <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Test options and evaluation metric</span>
+       seed <span style='color:#806030; '>=</span> <span style='color:#8c0000; '>7</span>
+       scoring <span style='color:#806030; '>=</span> <span style='color:#e60000; '>'accuracy'</span>
+       </pre>
+
+
+       <p> Spot check Algorithms, compare Algorithms, and make prediction on validation dataset. </p>
+<!-- This is the code -->     
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Spot Check Algorithms</span>
+      models <span style='color:#806030; '>=</span> <span style='color:#806030; '>[</span><span style='color:#806030; '>]</span>
+      models<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'LR'</span><span style='color:#806030; '>,</span> LogisticRegression<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      models<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'LDA'</span><span style='color:#806030; '>,</span> LinearDiscriminantAnalysis<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      models<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'KNN'</span><span style='color:#806030; '>,</span> KNeighborsClassifier<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      models<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'CART'</span><span style='color:#806030; '>,</span> DecisionTreeClassifier<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      models<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'NB'</span><span style='color:#806030; '>,</span> GaussianNB<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      models<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span><span style='color:#806030; '>(</span><span style='color:#e60000; '>'SVM'</span><span style='color:#806030; '>,</span> SVC<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      <span style='color:#c34e00; '># evaluate each model in turn</span>
+      results <span style='color:#806030; '>=</span> <span style='color:#806030; '>[</span><span style='color:#806030; '>]</span>
+      names <span style='color:#806030; '>=</span> <span style='color:#806030; '>[</span><span style='color:#806030; '>]</span>
+      <span style='color:#400000; font-weight:bold; '>for</span> name<span style='color:#806030; '>,</span> model <span style='color:#400000; font-weight:bold; '>in</span> models<span style='color:#806030; '>:</span>
+      kfold <span style='color:#806030; '>=</span> model_selection<span style='color:#806030; '>.</span>KFold<span style='color:#806030; '>(</span>n_splits<span style='color:#806030; '>=</span><span style='color:#8c0000; '>10</span><span style='color:#806030; '>,</span> random_state<span style='color:#806030; '>=</span>seed<span style='color:#806030; '>)</span>
+	  cv_results <span style='color:#806030; '>=</span> model_selection<span style='color:#806030; '>.</span>cross_val_score<span style='color:#806030; '>(</span>model<span style='color:#806030; '>,</span>
+      X_train<span style='color:#806030; '>,</span> Y_train<span style='color:#806030; '>,</span> cv<span style='color:#806030; '>=</span>kfold<span style='color:#806030; '>,</span> scoring<span style='color:#806030; '>=</span>scoring<span style='color:#806030; '>)</span>
+      results<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span>cv_results<span style='color:#806030; '>)</span>
+      names<span style='color:#806030; '>.</span>append<span style='color:#806030; '>(</span>name<span style='color:#806030; '>)</span>
+      msg <span style='color:#806030; '>=</span> <span style='color:#e60000; '>"%s: %f (%f)"</span> <span style='color:#44aadd; '>%</span> <span style='color:#806030; '>(</span>name<span style='color:#806030; '>,</span> cv_results<span style='color:#806030; '>.</span>mean<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>,</span> cv_results<span style='color:#806030; '>.</span>std<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+	  <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>msg<span style='color:#806030; '>)</span>
+      </pre>  
+      <!-- This is the code -->     
+      <pre style='color:#000000;background:#f1f0f0;'>LR<span style='color:#806030; '>:</span>   <span style='color:#800000; '>0.966667</span> <span style='color:#806030; '>(</span><span style='color:#800000; '>0.040825</span><span style='color:#806030; '>)</span>
+      LDA<span style='color:#806030; '>:</span> <span style='color:#800000; '>0.975000</span> <span style='color:#806030; '>(</span><span style='color:#800000; '>0.038188</span><span style='color:#806030; '>)</span>
+      KNN<span style='color:#806030; '>:</span> <span style='color:#800000; '>0.983333</span> <span style='color:#806030; '>(</span><span style='color:#800000; '>0.033333</span><span style='color:#806030; '>)</span>
+      CART<span style='color:#806030; '>:</span> <span style='color:#800000; '>0.975000</span> <span style='color:#806030; '>(</span><span style='color:#800000; '>0.038188</span><span style='color:#806030; '>)</span>
+      NB<span style='color:#806030; '>:</span> <span style='color:#800000; '>0.975000</span> <span style='color:#806030; '>(</span><span style='color:#800000; '>0.053359</span><span style='color:#806030; '>)</span>
+      SVM<span style='color:#806030; '>:</span> <span style='color:#800000; '>0.981667</span> <span style='color:#806030; '>(</span><span style='color:#800000; '>0.025000</span><span style='color:#806030; '>)</span>
+      </pre>
+<!-- This is the code -->
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Compare Algorithms</span>
+      fig <span style='color:#806030; '>=</span> plt<span style='color:#806030; '>.</span>figure<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+      fig<span style='color:#806030; '>.</span>suptitle<span style='color:#806030; '>(</span><span style='color:#e60000; '>'Algorithm Comparison'</span><span style='color:#806030; '>)</span>
+      ax <span style='color:#806030; '>=</span> fig<span style='color:#806030; '>.</span>add_subplot<span style='color:#806030; '>(</span><span style='color:#8c0000; '>111</span><span style='color:#806030; '>)</span>
+      plt<span style='color:#806030; '>.</span>boxplot<span style='color:#806030; '>(</span>results<span style='color:#806030; '>)</span>
+      ax<span style='color:#806030; '>.</span>set_xticklabels<span style='color:#806030; '>(</span>names<span style='color:#806030; '>)</span>
+      plt<span style='color:#806030; '>.</span>show<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+      </pre>
+      
+      <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '># Make predictions on validation dataset</span>
+      knn <span style='color:#806030; '>=</span> KNeighborsClassifier<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span>
+      knn<span style='color:#806030; '>.</span>fit<span style='color:#806030; '>(</span>X_train<span style='color:#806030; '>,</span> Y_train<span style='color:#806030; '>)</span>
+      predictions <span style='color:#806030; '>=</span> knn<span style='color:#806030; '>.</span>predict<span style='color:#806030; '>(</span>X_validation<span style='color:#806030; '>)</span>
+      <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>accuracy_score<span style='color:#806030; '>(</span>Y_validation<span style='color:#806030; '>,</span> predictions<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>confusion_matrix<span style='color:#806030; '>(</span>Y_validation<span style='color:#806030; '>,</span> predictions<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      <span style='color:#400000; font-weight:bold; '>print</span><span style='color:#806030; '>(</span>classification_report<span style='color:#806030; '>(</span>Y_validation<span style='color:#806030; '>,</span> predictions<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span>
+      </pre>
+ 
+
+      <p> The final project's data presented as follows: </p>
+      <img src="image/mlearn/m1.png" alt="Mountain View" align="left" style="width:304px;height:228px;">
+      <img src="image/mlearn/m2.png" alt="Mountain View"  style="width:304px;height:228px;">
+      <img src="image/mlearn/m3.png" alt="Mountain View"  style="width:304px;height:228px;">
+      <img src="image/mlearn/m4.png" alt="Mountain View"  style="width:304px;height:228px;">
+      </div>
+    <div class="w3-third w3-center">
+        <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+    <div class="w3-twothird">
+      <h1>Objective Statement</h1>
+      <h5 class="w3-padding-32">To obtain the position of Software Engineer; a role that will lend itself to refine my skills as a Software Engineer, augment my understanding of software best practices, and benefit my previous experience as a software developer and marketing professional at some of the Taiwan's leading tech organizations.
+      </h5>
+      <p class="w3-text-grey">Paul is an Engineering student study in Robotic Engineering in Tamkang University in 2015. His research area is in Robotic Vision and Control. He was accepted by Master Science Computer Science program in Illinois Institute of Technology at Fall 2018. His goal is to become a software engineer working on the area of robotic vision.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: code life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.facebook.com/huang.paul.77" class="fa fa-facebook-official w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/icepaulfactory/"class="fa fa-instagram w3-hover-opacity"></a>
+    <a href="https://www.snapchat.com/add/lineageispig" class="fa fa-snapchat w3-hover-opacity"></a>
+    <a href="http://pin.it/kYqcEA3" class="fa fa-pinterest-p w3-hover-opacity"></a>
+    <a href="https://twitter.com/lineageispig" class="fa fa-twitter w3-hover-opacity"></i>
+    <a href="https://www.linkedin.com/in/huang-paul-373386137/"class="fa fa-linkedin w3-hover-opacity"></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

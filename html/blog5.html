@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">MATLAB for Robotic Vision</h1>
+  <p class="w3-xlarge">Udacity nondegree course 和 MATLAB Camera Calibration Toolbox.</p>
+   <div><img src="image/dolphin.jpg" alt="Mountain View" align="left" style="width:304px;height:228px;"></div> 
+   <div> <img src="image/underwater.jpg" alt="Mountain View" align="right" style="width:304px;height:228px;"></div>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Overview :在機器人視覺研究所時，主要是在研究Camera Calibration，利用MATLAB Camera Calibration Toolbox 研究視覺應先校正。
+          在Udacity nondegree program 上自學Robotic Vision <h2>  </h2>
+       </h1>
+       <div>
+         <p>那兩張圖片來學習： </p> 
+         <p>第一張為影相切割 </p>
+         <p2>  
+          <pre style='color:#000000;background:#f1f0f0;'>img <span style='color:#806030; '>=</span> imread<span style='color:#806030; '>(</span><span style='color:#806030; '>'dolphin.jpg'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+          imshow<span style='color:#806030; '>(</span>img<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+          <span style='color:#800040; '>disp</span><span style='color:#806030; '>(</span><span style='color:#800040; '>size</span><span style='color:#806030; '>(</span>img<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> <span style='color:#c34e00; '>% check size</span>
+          cropped <span style='color:#806030; '>=</span> img<span style='color:#806030; '>(</span>110<span style='color:#806030; '>:</span>150<span style='color:#806030; '>,</span> 10<span style='color:#806030; '>:</span>110<span style='color:#806030; '>,</span> 3<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+          imshow<span style='color:#806030; '>(</span>cropped<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span></pre>
+          </p2>
+        </div>
+        <p4>完成的作品為：
+        <img src="image/imageprocessing1.jpg" alt="Mountain View" style="float:middle;width:304px;height:228px;">
+        </p4>
+        <p>第二個例子為黑白影像。</p>
+        <pre style='color:#000000;background:#f1f0f0;'>img <span style='color:#806030; '>=</span> imread<span style='color:#806030; '>(</span><span style='color:#806030; '>'dolphin.jpg'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        imshow<span style='color:#806030; '>(</span>img<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        <span style='color:#800040; '>disp</span><span style='color:#806030; '>(</span><span style='color:#800040; '>size</span><span style='color:#806030; '>(</span>img<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        img_red <span style='color:#806030; '>=</span> img<span style='color:#806030; '>(</span><span style='color:#806030; '>:</span><span style='color:#806030; '>,</span><span style='color:#806030; '>:</span><span style='color:#806030; '>,</span>1<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        imshow<span style='color:#806030; '>(</span>img_red<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        <span style='color:#800040; '>disp</span><span style='color:#806030; '>(</span><span style='color:#800040; '>size</span><span style='color:#806030; '>(</span>img_red<span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        <span style='color:#800040; '>plot</span><span style='color:#806030; '>(</span>img_red<span style='color:#806030; '>(</span>150<span style='color:#806030; '>,</span><span style='color:#806030; '>:</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        </pre>
+        <p>以上為程式碼</p>
+        <p>完成的作品為：
+        <img src="image/imageprocessing2.jpg" alt="Mountain View" style="float:middle;width:304px;height:228px;">
+        </p>
+        <p>第三個專案為利用係屬與影像矩陣相乘，行成淡深的差別:</p> 
+        <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '>%Multiply by scalar demo</span>
+        dolphin <span style='color:#806030; '>=</span> imread<span style='color:#806030; '>(</span><span style='color:#806030; '>'dolphin.jpg'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        dark <span style='color:#806030; '>=</span> <span style='color:#800000; '>0.5</span> <span style='color:#806030; '>*</span> dolphin<span style='color:#806030; '>;</span>
+        bright<span style='color:#806030; '>=</span> <span style='color:#800000; '>1.5</span> <span style='color:#806030; '>*</span> dolphin<span style='color:#806030; '>;</span>
+        imshow<span style='color:#806030; '>(</span>dark<span style='color:#806030; '>)</span>
+        imshow<span style='color:#806030; '>(</span>bright<span style='color:#806030; '>)</span>
+        </pre>
+        <p>完成的作品為：</p>
+        <img src="image/imageprocessing3-2.jpg" alt="Mountain View" style="float:middle;width:304px;height:228px;">
+        <img src="image/imageprocessing3.jpg" alt="Mountain View" style="float:middle;width:304px;height:228px;">
+        <p>第四個專案是影相重疊：</p> 
+        <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '>% Average image of two images </span>
+        dolphin <span style='color:#806030; '>=</span> imread<span style='color:#806030; '>(</span><span style='color:#806030; '>'dolphin.jpg'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        underwater <span style='color:#806030; '>=</span> imread<span style='color:#806030; '>(</span><span style='color:#806030; '>'underwater.jpg'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        result <span style='color:#806030; '>=</span> <span style='color:#800000; '>0.5</span> <span style='color:#806030; '>*</span> dolphin <span style='color:#806030; '>+</span> <span style='color:#800000; '>0.5</span> <span style='color:#806030; '>*</span> underwater<span style='color:#806030; '>;</span>
+        imshow<span style='color:#806030; '>(</span>result<span style='color:#806030; '>)</span>
+        </pre>
+        <p> 完成的作品為：</p> 
+        <img src="image/imageprocessing4.jpg" alt="Mountain View" style="width:304px;height:228px;">
+        <p> The next chapter is to use Matlab for image processing. </p>
+        <div>那兩張圖片來學習：
+        <pre style='color:#000000;background:#f1f0f0;'>webcamlist<span style='color:#806030; '>;</span> <span style='color:#c34e00; '>%finding the camera in the computer </span>
+        mycam<span style='color:#806030; '>=</span> webcam<span style='color:#806030; '>(</span><span style='color:#806030; '>'USB2.0 wCamera'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>   <span style='color:#c34e00; '>%set the camera. make sure not to </span>
+        <span style='color:#c34e00; '>%define mycam twice.</span>
+        preview<span style='color:#806030; '>(</span>mycam<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> <span style='color:#c34e00; '>%preview</span>
+        img <span style='color:#806030; '>=</span> snapshot<span style='color:#806030; '>(</span>mycam<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        image<span style='color:#806030; '>(</span>img<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        </pre> 
+      </div>
+    <div>   
+    <pre style='color:#000000;background:#f1f0f0;'>clc<span style='color:#806030; '>;</span> close <span style='color:#800040; '>all</span><span style='color:#806030; '>;</span> <span style='color:#800040; '>clear</span> <span style='color:#800040; '>all</span><span style='color:#806030; '>;</span> 
+    webcamlist<span style='color:#806030; '>;</span> <span style='color:#c34e00; '>% search for 2 of the camera and store them into </span>
+    <span style='color:#c34e00; '>% cam1, cam2</span>
+    cam1 <span style='color:#806030; '>=</span> webcam<span style='color:#806030; '>(</span>2<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> <span style='color:#c34e00; '>% webcam(1) is a built-in camera in the computer.</span>
+    cam2 <span style='color:#806030; '>=</span> webcam<span style='color:#806030; '>(</span>3<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+    preview<span style='color:#806030; '>(</span>cam1<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> <span style='color:#c34e00; '>% open two of the camera</span>
+    preview<span style='color:#806030; '>(</span>cam2<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> 
+    img1 <span style='color:#806030; '>=</span> snapshot<span style='color:#806030; '>(</span>cam1<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> <span style='color:#c34e00; '>% capture images</span>
+    img2 <span style='color:#806030; '>=</span> snapshot<span style='color:#806030; '>(</span>cam2<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+    <span style='color:#800040; '>figure</span><span style='color:#806030; '>(</span>3<span style='color:#806030; '>)</span> <span style='color:#c34e00; '>% open the image</span>
+    image<span style='color:#806030; '>(</span>img1<span style='color:#806030; '>)</span>
+    <span style='color:#800040; '>figure</span><span style='color:#806030; '>(</span>4<span style='color:#806030; '>)</span>
+    image<span style='color:#806030; '>(</span>img2<span style='color:#806030; '>)</span>
+    imwrite<span style='color:#806030; '>(</span>img1<span style='color:#806030; '>,</span> <span style='color:#806030; '>'imgL.jpg'</span><span style='color:#806030; '>,</span> <span style='color:#806030; '>'jpg'</span><span style='color:#806030; '>)</span> <span style='color:#c34e00; '>% save the image as jpg.</span>
+    imwrite<span style='color:#806030; '>(</span>img2<span style='color:#806030; '>,</span> <span style='color:#806030; '>'imgR.jpg'</span><span style='color:#806030; '>,</span> <span style='color:#806030; '>'jpg'</span><span style='color:#806030; '>)</span>
+    </pre>
+    </div>
+    <div> 
+        <pre style='color:#000000;background:#f1f0f0;'><span style='color:#c34e00; '>% This project is the save and read images consecutive 20 times.</span>
+        <span style='color:#400000; font-weight:bold; '>for</span> index <span style='color:#806030; '>=</span> 1<span style='color:#806030; '>:</span>20<span style='color:#806030; '>;</span>
+        t <span style='color:#806030; '>=</span> intstr<span style='color:#806030; '>(</span>index<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> 
+        img <span style='color:#806030; '>=</span> snapshot<span style='color:#806030; '>(</span>mycam<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        imname <span style='color:#806030; '>=</span> <span style='color:#806030; '>(</span><span style='color:#806030; '>'\BBB'</span><span style='color:#806030; '>,</span>t<span style='color:#806030; '>,</span> <span style='color:#806030; '>'jpg'</span><span style='color:#806030; '>)</span>
+        <span style='color:#400000; font-weight:bold; '>end</span>
+        <span style='color:#400000; font-weight:bold; '>for</span> i <span style='color:#806030; '>=</span> 1 <span style='color:#806030; '>:</span> 20
+        k <span style='color:#806030; '>=</span> int2str<span style='color:#806030; '>(</span>i<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+        imname <span style='color:#806030; '>=</span><span style='color:#806030; '>(</span><span style='color:#806030; '>'\BBB'</span><span style='color:#806030; '>,</span> k<span style='color:#806030; '>,</span> <span style='color:#806030; '>'jpg'</span><span style='color:#806030; '>)</span>
+        </pre>
+    </div>
+    <div>
+      <pre style='color:#000000;background:#f1f0f0;'>clc<span style='color:#806030; '>;</span> close <span style='color:#800040; '>all</span> <span style='color:#806030; '>;</span> <span style='color:#800040; '>all</span>
+      webcamlist<span style='color:#806030; '>;</span>                  	<span style='color:#c34e00; '>% Find the camera</span>
+      <span style='color:#800040; '>clear</span> mycam<span style='color:#806030; '>;</span>   <span style='color:#c34e00; '>% Clear the variable</span>
+      mycam<span style='color:#806030; '>=</span>webam<span style='color:#806030; '>(</span>’Webcam C170’<span style='color:#806030; '>)</span>	<span style='color:#c34e00; '>% We use Webcam C170 as a default camera</span>
+      preview<span style='color:#806030; '>(</span>mycam<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>             
+      img <span style='color:#806030; '>=</span> snapshot<span style='color:#806030; '>(</span>mycam<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> image<span style='color:#806030; '>(</span>img<span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>                 
+      imwrite<span style='color:#806030; '>(</span>img<span style='color:#806030; '>,</span><span style='color:#806030; '>'sample.jpg'</span><span style='color:#806030; '>,</span><span style='color:#806030; '>'jpg'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span> 	
+      cam <span style='color:#806030; '>=</span> webcam                        
+      fid <span style='color:#806030; '>=</span> fopen<span style='color:#806030; '>(</span><span style='color:#806030; '>'time.txt'</span><span style='color:#806030; '>,</span><span style='color:#806030; '>'w'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>  <span style='color:#c34e00; '>% make a text file name 'time.txt'</span>
+      t1<span style='color:#806030; '>=</span>0<span style='color:#806030; '>;</span>
+      t<span style='color:#806030; '>=</span> timer<span style='color:#806030; '>(</span><span style='color:#806030; '>'</span>ExecutionMode’<span style='color:#806030; '>,</span>’fixedRate’<span style='color:#806030; '>,</span>TasksToExecute<span style='color:#806030; '>,</span>2<span style='color:#806030; '>,</span>’Period’<span style='color:#806030; '>,</span>
+      1<span style='color:#806030; '>,</span>StartDelay<span style='color:#806030; '>,</span>1<span style='color:#806030; '>)</span> 
+      <span style='color:#c34e00; '>% Open the time and set up ExecutionMode, TaskToExecute, </span>
+      <span style='color:#c34e00; '>%Period and StartDelay. </span>
+      t<span style='color:#806030; '>.</span>StartFcn <span style='color:#806030; '>=</span> {@timepicture<span style='color:#806030; '>,</span> <span style='color:#806030; '>'start'</span>} 		
+      t<span style='color:#806030; '>.</span>StopFcn <span style='color:#806030; '>=</span> { @timepicture<span style='color:#806030; '>,</span> <span style='color:#806030; '>'done!'</span>} 	
+      t<span style='color:#806030; '>.</span>TimerFcn <span style='color:#806030; '>=</span> @<span style='color:#806030; '>(</span>x<span style='color:#806030; '>,</span>y<span style='color:#806030; '>)</span><span style='color:#800040; '>disp</span><span style='color:#806030; '>(</span><span style='color:#806030; '>'shot!'</span><span style='color:#806030; '>)</span>
+      </pre></div>
+      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="w3-third w3-center">
+        <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+      </div>
+    </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Objective Statement</h1>
+      <h5 class="w3-padding-32">To obtain the position of Software Engineer; a role that will lend itself to refine my skills as a Software Engineer, augment my understanding of software best practices, and benefit my previous experience as a software developer and marketing professional at some of the Taiwan's leading tech organizations.</h5>
+
+      <p class="w3-text-grey">Paul is an engineering student study in Robotic Engineering in Tamkang University in 2015. His research area is in Robotic Vision and Control. He was accepted by Master Science Computer Science program in Illinois Institute of Technology at Fall 2018. His goal is to become a software engineer working on the area of robotic vision. </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: code life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.facebook.com/huang.paul.77" class="fa fa-facebook-official w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/icepaulfactory/"class="fa fa-instagram w3-hover-opacity"></a>
+    <a href="https://www.snapchat.com/add/lineageispig" class="fa fa-snapchat w3-hover-opacity"></a>
+    <a href="http://pin.it/kYqcEA3" class="fa fa-pinterest-p w3-hover-opacity"></a>
+    <a href="https://twitter.com/lineageispig" class="fa fa-twitter w3-hover-opacity"></a>
+    <a href="https://www.linkedin.com/in/huang-paul-373386137/"class="fa fa-linkedin w3-hover-opacity"></a>
+ </div>
+ <p>Powered by 
+     <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+  function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
